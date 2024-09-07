@@ -15,22 +15,23 @@ public class Report implements CommandExecutor {
         Player bazikon = (Player) sender;
         String playername = bazikon.getName();
 
-        if (args.length > 0) {
-            StringBuilder message = new StringBuilder();
-            for (String arg : args) {
-                message.append(arg).append(" ");
-            }
-            String finalMessage = message.toString().trim();
+        if (bazikon.hasPermission("ReportPlayer.use")) {
+            if (args.length > 0) {
+                StringBuilder message = new StringBuilder();
+                for (String arg : args) {
+                    message.append(arg).append(" ");
+                }
+                String finalMessage = message.toString().trim();
 
-            //Ersal message to Admin report
-            for (Player onlineplayers : Bukkit.getOnlinePlayers()){
+                //Ersal message to Admin report
+                for (Player onlineplayers : Bukkit.getOnlinePlayers()) {
 
-                if (onlineplayers.hasPermission("ReportPlayer.admin")) {
-                    onlineplayers.sendMessage(color("&7[&c&lReport&r&7] " + playername + " &c| &f" + finalMessage));
+                    if (onlineplayers.hasPermission("ReportPlayer.admin")) {
+                        onlineplayers.sendMessage(color("&7[&c&lReport&r&7] " + playername + " &c| &f" + finalMessage));
+                    }
                 }
             }
         }
-
 
 
 
