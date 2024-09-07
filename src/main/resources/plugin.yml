@@ -1,0 +1,8 @@
+name: ReportPlayer
+version: '${project.version}'
+main: org.peakimo.reportplayer.ReportPlayer
+api-version: '1.16'
+commands:
+  report:
+    description: Send report to player admin.
+    usage: </Report (Message)>
