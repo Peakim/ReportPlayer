@@ -22,6 +22,7 @@ public class Report implements CommandExecutor {
                     message.append(arg).append(" ");
                 }
                 String finalMessage = message.toString().trim();
+                bazikon.sendMessage(color("&7[&c&lReport&r&7] &fYour report request has been submit."));
 
                 //Ersal message to Admin report
                 for (Player onlineplayers : Bukkit.getOnlinePlayers()) {
