@@ -15,6 +15,12 @@ public class Report implements CommandExecutor {
         Player bazikon = (Player) sender;
         String playername = bazikon.getName();
 
+        if (args.length == 0){
+            sender.sendMessage(color("&cUse: /report (message)"));
+
+
+        }
+
         if (bazikon.hasPermission("ReportPlayer.use")) {
             if (args.length > 0) {
                 StringBuilder message = new StringBuilder();
